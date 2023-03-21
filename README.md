@@ -10,6 +10,8 @@ app store에서 program을 다운 받는다 => <strong>docker hub</strong>에서
 program을 실행하면 process가 동작 => <strong>image</strong>를 실행하면 <strong>container</strong>가 동작<br>
 program이 여러개의 프로세스를 가질수 있듯, image도 여러개의 컨테이너를 가질수 있음<br>
 docker hub에서 image를 다운받는 행위를 <strong>pull</strong>, image를 실행시키는 행위를 <strong>run</strong> 이라고 한다.<br>
+필요한 image를 다운받기 위해 hub.docker.com으로 접속<br>
+Explore 버튼 클릭
 </p>
 
 
