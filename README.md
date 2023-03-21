@@ -14,7 +14,8 @@ docker hub에서 image를 다운받는 행위를 <strong>pull</strong>, image를
 apache웹서버를 컨테이너 위에서 실행시키기 위해 httpd 검색(docker hub상에서 apache웹서버는 httpd라는 이름을 갖는다)<br>
 docker pull 명령어 설명 : https://docs.docker.com/engine/reference/commandline/pull/ <br><br>
 sudo docker pull httpd (apache 웹서버의 docker image 다운로드)(mac의 경우 모든 명령어에서 sudo 빼고 실행) <br>
-sudo docker images(성공적으로 만들었는지 확인)
+sudo docker images (성공적으로 만들었는지 확인)
 </p>
+![image](https://user-images.githubusercontent.com/81700507/226577081-877978e3-e67d-4b91-aafc-cd5eaa730d44.png)
 
 
