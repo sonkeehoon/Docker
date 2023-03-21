@@ -7,7 +7,8 @@
 
 <p><h3>3강 이미지 pull</h3>
 <img width = 500 src="https://user-images.githubusercontent.com/81700507/226579856-8ce93236-bf63-4c1b-8c1a-398146607d87.png">
-<p><이미지 출처 : 생활코딩 Docker 입문수업 - 3. 이미지 pull></p>
+<p"><이미지 출처 : 생활코딩 Docker 입문수업 - 3. 이미지 pull></p><br>
+  
 app store에서 program을 다운 받는다 => <strong>docker hub</strong>에서 <strong>image</strong>를 다운받는다<br>
 program을 실행하면 process가 동작 => <strong>image</strong>를 실행하면 <strong>container</strong>가 동작<br>
 program이 여러개의 프로세스를 가질수 있듯, image도 여러개의 컨테이너를 가질수 있음<br>
