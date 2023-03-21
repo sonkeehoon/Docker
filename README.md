@@ -11,9 +11,10 @@ program을 실행하면 process가 동작 => <strong>image</strong>를 실행하
 program이 여러개의 프로세스를 가질수 있듯, image도 여러개의 컨테이너를 가질수 있음<br>
 docker hub에서 image를 다운받는 행위를 <strong>pull</strong>, image를 실행시키는 행위를 <strong>run</strong> 이라고 한다<br>
 필요한 image를 다운받기 위해 hub.docker.com으로 접속 후 Explore 버튼 클릭<br>
-apache웹서버를 컨테이너 위해서 실행시키기 위해 httpd 검색(docker hub상에서 apache웹서버는 httpd라는 이름을 갖는다)<br>
-pull 명령어 설명 : https://docs.docker.com/engine/reference/commandline/pull/ <br><br>
-sudo docker pull httpd 
+apache웹서버를 컨테이너 위에서 실행시키기 위해 httpd 검색(docker hub상에서 apache웹서버는 httpd라는 이름을 갖는다)<br>
+docker pull 명령어 설명 : https://docs.docker.com/engine/reference/commandline/pull/ <br><br>
+apache 웹서버의 docker image 다운로드 : sudo docker pull httpd <br>
+성공적으로 만들었는지 확인
 </p>
 
 
