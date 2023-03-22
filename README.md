@@ -5,7 +5,7 @@
 설치 방법 : https://docs.docker.com/engine/install/ubuntu/<br>
 1,2강은 수업소개 및 설치 강의이기 때문에 내용 정리는 생략했다</p>
 
-<p><h3>3강 이미지 pull</h3>
+<p><h3>3강 image pull</h3>
 <img width = 500 src="https://user-images.githubusercontent.com/81700507/226579856-8ce93236-bf63-4c1b-8c1a-398146607d87.png">
 <p"><이미지 출처 : 생활코딩 Docker 입문수업 - 3. 이미지 pull></p><br>
   
@@ -19,7 +19,7 @@ docker pull 명령어 설명 : https://docs.docker.com/engine/reference/commandl
 sudo docker pull httpd (apache 웹서버의 docker image 다운로드)<br>
 나는 리눅스 os에서 실행하니까 sudo를 붙였다<br>
 mac os의 경우 모든 명령어에서 sudo를 빼면 된다고 한다 <br>
-<img width = 500 src="https://user-images.githubusercontent.com/81700507/226581437-458aaf00-73ff-4255-9a38-4c89ecf9fecb.png">
+<img width = 500 src="https://user-images.githubusercontent.com/81700507/226581437-458aaf00-73ff-4255-9a38-4c89ecf9fecb.png"><br>
 sudo docker images (성공적으로 만들었는지 확인)
 <img width = 500 src="https://user-images.githubusercontent.com/81700507/226582323-c083a92d-8591-4cbd-bbfa-00bf095f3c82.png">
 
