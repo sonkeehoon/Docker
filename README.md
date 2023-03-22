@@ -18,8 +18,8 @@ apache웹서버를 컨테이너 위에서 실행시키기 위해 httpd 검색(do
 docker pull 명령어 설명 : https://docs.docker.com/engine/reference/commandline/pull/ <br><br>
 sudo docker pull httpd (apache 웹서버의 docker image 다운로드)<br>
 나는 리눅스 os에서 실행하니까 sudo를 붙였다(mac os의 경우 모든 명령어에서 sudo를 빼면 된다)<br>
-<img width = 500 src="https://user-images.githubusercontent.com/81700507/226581437-458aaf00-73ff-4255-9a38-4c89ecf9fecb.png"><br>
-sudo docker images (성공적으로 만들었는지 확인)<br><br>
+<img width = 500 src="https://user-images.githubusercontent.com/81700507/226581437-458aaf00-73ff-4255-9a38-4c89ecf9fecb.png"><br><br>
+sudo docker images (성공적으로 만들었는지 확인)<br>
 <img width = 500 src="https://user-images.githubusercontent.com/81700507/226582323-c083a92d-8591-4cbd-bbfa-00bf095f3c82.png">
 
 </p>
