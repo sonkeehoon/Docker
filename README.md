@@ -20,9 +20,37 @@ sudo docker pull httpd (apache 웹서버의 docker image 다운로드)<br>
 리눅스 환경이기 때문에 sudo를 붙였다(mac os의 경우 모든 명령어에서 sudo를 빼면 된다)<br>
 <img width = 500 src="https://user-images.githubusercontent.com/81700507/226581437-458aaf00-73ff-4255-9a38-4c89ecf9fecb.png"><br><br>
 sudo docker images (성공적으로 만들었는지 확인)<br>
-<img width = 500 src="https://user-images.githubusercontent.com/81700507/226582323-c083a92d-8591-4cbd-bbfa-00bf095f3c82.png">
+<img width = 500 src="https://user-images.githubusercontent.com/81700507/226582323-c083a92d-8591-4cbd-bbfa-00bf095f3c82.png"></p><br>
+
+
+<p><h2>4강 container run</h2>
+run : image를 실행시켜서 container를 만드는 행위 <br>
+sudo docker run httpd <br>
+<img width = 600 src="https://user-images.githubusercontent.com/81700507/226902543-6a84b71d-24e5-462a-8d6e-b7bc42041423.png"><br>
+실행중인 컨테이너를 확인하려면 새로운 터미널 창에서<br>
+sudo docker ps <br>
+<img width = 600 src="https://user-images.githubusercontent.com/81700507/226903492-0978e9c1-3502-4d12-a2df-f63422ac64d5.png"><br>
+컨테이너 이름을 "webserver"로 지정해서 만들려면 : sudo docker run --name webserver httpd<br>
+실행중인 docker를 끄고싶을때 : sudo docker stop webserver<br>
+모든 컨테이너 목록을 보고싶을때 : sudo docker ps -a<br>
+# stop 했다고 container가 사라지는것이 아니다!<br>
+<img width = 700 src="https://user-images.githubusercontent.com/81700507/226907492-d44acb64-2821-4d4d-a12b-e47b90507317.png"><br>
+중지된 webserver를 다시 실행하려면 : sudo docker start webserver<br>
+로그를 보려면 : sudo docker logs webserver<br>
+실시간으로(docker run 했을때처럼) 로그를 보고싶으면 : sudo docker logs -f webserver<br>
+컨테이너를 삭제하는 명령어 : sudo docker rm webserver<br>
+그런데 컨테이너를 삭제하려는데 에러가 떴다<br>
+<img width = 700 src="https://user-images.githubusercontent.com/81700507/226910668-15efa968-c5ba-43e9-bbc7-440ee3487b33.png"><br>
+실행중인 컨테이너를 삭제하려고 했기때문에 에러가 뜬것이다<br>
+실행중인 컨테이너를 먼저 stop 하고 삭제하면 된다<br>
+sudo docker stop webserver<br>
+sudo docker rm webserver<br>
+<img width = 500 src="https://user-images.githubusercontent.com/81700507/226911771-079983db-1d5c-4833-ae5e-3c8f1376d000.png"><br>
+만약 실행중인 컨테이너를 강제로 삭제하고 싶다면 : sudo docker rm --force [container]<br>
+docker image를 삭제하고 싶다면 : sudo docker rmi [image]<br>
 
 </p>
+
 
 
 
