@@ -4,7 +4,7 @@ https://www.youtube.com/playlist?list=PLuHgQVnccGMDeMJsGq2O-55Ymtx0IdKWf</p>
 <p>AWS EC2 인스턴스의 ubuntu에 vscode remote ssh로 접속해서 설치했다<br>
 설치 방법 : https://docs.docker.com/engine/install/ubuntu/<br>
 1,2강은 수업소개 및 설치 강의이기 때문에 내용 정리는 생략했다</p>
-<p><h2>3강 image pull</h2>
+<hr><p><h2>3강 image pull</h2>
 <center><img width = 500 src="https://user-images.githubusercontent.com/81700507/226579856-8ce93236-bf63-4c1b-8c1a-398146607d87.png"></center>
 <p><이미지 출처 : 생활코딩 Docker 입문수업 - 3. 이미지 pull></p><br>
   
