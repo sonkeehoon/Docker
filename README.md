@@ -1,13 +1,15 @@
 <h1>Docker를 혼자 공부하면서 기록을 남기는 곳</h1>
 <p>참고 영상 : 생활코딩 Docker 입문 수업<br>
-  https://www.youtube.com/playlist?list=PLuHgQVnccGMDeMJsGq2O-55Ymtx0IdKWf</p>
+https://www.youtube.com/playlist?list=PLuHgQVnccGMDeMJsGq2O-55Ymtx0IdKWf</p>
 <p>AWS EC2 인스턴스의 ubuntu에 vscode remote ssh로 접속해서 설치했다<br>
 설치 방법 : https://docs.docker.com/engine/install/ubuntu/<br>
 1,2강은 수업소개 및 설치 강의이기 때문에 내용 정리는 생략했다</p>
 
 <p><h2>3강 image pull</h2>
-<img width = 500 src="https://user-images.githubusercontent.com/81700507/226579856-8ce93236-bf63-4c1b-8c1a-398146607d87.png">
-<p"><이미지 출처 : 생활코딩 Docker 입문수업 - 3. 이미지 pull></p><br>
+<center><img width = "500" src="https://user-images.githubusercontent.com/81700507/226579856-8ce93236-bf63-4c1b-8c1a-398146607d87.png"></center>
+<div style='text-align:center;'>
+<p><이미지 출처 : 생활코딩 Docker 입문수업 - 3. 이미지 pull></p><br>
+</div>
   
 app store에서 program을 다운 받는다 => <strong>docker hub</strong>에서 <strong>image</strong>를 다운받는다<br>
 program을 실행하면 process가 동작 => <strong>image</strong>를 실행하면 <strong>container</strong>가 동작<br>
@@ -20,7 +22,11 @@ sudo docker pull httpd (apache 웹서버의 docker image 다운로드)<br>
 리눅스 환경이기 때문에 sudo를 붙였다(mac os의 경우 모든 명령어에서 sudo를 빼면 된다)<br>
 <img width = 500 src="https://user-images.githubusercontent.com/81700507/226581437-458aaf00-73ff-4255-9a38-4c89ecf9fecb.png"><br><br>
 sudo docker images (성공적으로 만들었는지 확인)<br>
-<img width = 500 src="https://user-images.githubusercontent.com/81700507/226582323-c083a92d-8591-4cbd-bbfa-00bf095f3c82.png"></p><br>
+<div>
+<img width = 500 src="https://user-images.githubusercontent.com/81700507/226582323-c083a92d-8591-4cbd-bbfa-00bf095f3c82.png">
+</div>
+</p><br>
+
 
 
 <p><h2>4강 container run</h2>
@@ -47,10 +53,25 @@ sudo docker stop webserver<br>
 sudo docker rm webserver<br>
 <img width = 500 src="https://user-images.githubusercontent.com/81700507/226911771-079983db-1d5c-4833-ae5e-3c8f1376d000.png"><br>
 만약 실행중인 컨테이너를 강제로 삭제하고 싶다면 : sudo docker rm --force [container]<br>
-docker image를 삭제하고 싶다면 : sudo docker rmi [image]<br>
+docker image를 삭제하고 싶다면 : sudo docker rmi [image]<br></p>
 
-</p>
+<p><h2>5강 network</h2>
+5강은 실습이나 명령어 보다는 이론 위주의 강의였다<br><br>
+<img width = 1000 height = 500 src="https://user-images.githubusercontent.com/81700507/227770613-e0286430-f638-48a4-ba0e-b42a03d8ca55.png">
+<p><이미지 출처 : 생활코딩 Docker 입문수업 - 5. 네트워크 pull></p><br>
+도커를 이용하면 웹서버가 컨테이너 안에 설치된다<br>
+이 컨테이너가 설치된 운영체제를 docker host 라고 부른다<br>
+하나의 호스트에는 여러개의 컨테이너가 만들어질 수 있다<br>
+컨테이너와 호스트는 모두 독립적인 실행환경이기 때문에 각자 독립적인 port와 file system을 갖는다<br>
+이 상태로 웹브라우저로 웹서버에 접속하려고 하면 연결이 안된다<br>
+왜냐? 호스트와 컨테이너는 연결이 끊겨있기 때문<br>
+그럼 어떻게할까? 호스트의 80번 포트와 컨테이너의 80번 포트를 연결해주면 된다<br>
+그걸 위한 명령어 : sudo docker run -p 80:80 httpd<br>
+80:80 에서 앞의 80은 host의 포트, 뒤의 80은 컨테이너의 포트<br>
+이러면 호스트와 컨테이너의 포트가 서로 연결된다<br>
+이렇게 연결된 포트로 신호를 전달하는것을 '포트포워딩' 이라고 한다<br>
 
+<br></p>
 
 
 
