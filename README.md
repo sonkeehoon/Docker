@@ -4,12 +4,9 @@ https://www.youtube.com/playlist?list=PLuHgQVnccGMDeMJsGq2O-55Ymtx0IdKWf</p>
 <p>AWS EC2 인스턴스의 ubuntu에 vscode remote ssh로 접속해서 설치했다<br>
 설치 방법 : https://docs.docker.com/engine/install/ubuntu/<br>
 1,2강은 수업소개 및 설치 강의이기 때문에 내용 정리는 생략했다</p>
-
 <p><h2>3강 image pull</h2>
-<center><img width = "500" src="https://user-images.githubusercontent.com/81700507/226579856-8ce93236-bf63-4c1b-8c1a-398146607d87.png"></center>
-<div style='text-align:center;'>
+<center><img width = 500 src="https://user-images.githubusercontent.com/81700507/226579856-8ce93236-bf63-4c1b-8c1a-398146607d87.png"></center>
 <p><이미지 출처 : 생활코딩 Docker 입문수업 - 3. 이미지 pull></p><br>
-</div>
   
 app store에서 program을 다운 받는다 => <strong>docker hub</strong>에서 <strong>image</strong>를 다운받는다<br>
 program을 실행하면 process가 동작 => <strong>image</strong>를 실행하면 <strong>container</strong>가 동작<br>
@@ -22,12 +19,9 @@ sudo docker pull httpd (apache 웹서버의 docker image 다운로드)<br>
 리눅스 환경이기 때문에 sudo를 붙였다(mac os의 경우 모든 명령어에서 sudo를 빼면 된다)<br>
 <img width = 500 src="https://user-images.githubusercontent.com/81700507/226581437-458aaf00-73ff-4255-9a38-4c89ecf9fecb.png"><br><br>
 sudo docker images (성공적으로 만들었는지 확인)<br>
-<div>
-<img width = 500 src="https://user-images.githubusercontent.com/81700507/226582323-c083a92d-8591-4cbd-bbfa-00bf095f3c82.png">
-</div>
-</p><br>
-
-
+<img width = 500 src="https://user-images.githubusercontent.com/81700507/226582323-c083a92d-8591-4cbd-bbfa-00bf095f3c82.png"><br>
+- image 삭제 명령어 : sudo docker rmi [image ID]<hr><br>
+</p>
 
 <p><h2>4강 container run</h2>
 run : image를 실행시켜서 container를 만드는 행위 <br>
@@ -53,7 +47,7 @@ sudo docker stop webserver<br>
 sudo docker rm webserver<br>
 <img width = 500 src="https://user-images.githubusercontent.com/81700507/226911771-079983db-1d5c-4833-ae5e-3c8f1376d000.png"><br>
 만약 실행중인 컨테이너를 강제로 삭제하고 싶다면 : sudo docker rm --force [container]<br>
-docker image를 삭제하고 싶다면 : sudo docker rmi [image]<br></p>
+docker image를 삭제하고 싶다면 : sudo docker rmi [image]<hr><br></p>
 
 <p><h2>5강 network</h2>
 5강은 실습이나 명령어 보다는 이론 위주의 강의였다<br><br>
@@ -70,8 +64,18 @@ docker image를 삭제하고 싶다면 : sudo docker rmi [image]<br></p>
 80:80 에서 앞의 80은 host의 포트, 뒤의 80은 컨테이너의 포트<br>
 이러면 호스트와 컨테이너의 포트가 서로 연결된다<br>
 이렇게 연결된 포트로 신호를 전달하는것을 '포트포워딩' 이라고 한다<br>
-
-<br></p>
+sudo docker run [OPTIONS] IMAGE [COMMAND] [ARG..]<br>
+호스트의 8080포트와 컨테이너의 80번 포트를 연결하기 : sudo docker run --name ws3 -p 8080:80 httpd
+<img width = 1000 src="https://user-images.githubusercontent.com/81700507/227772234-eddfc619-4d47-45ca-993f-6644fb42b3f5.png">
+컨테이너는 성공적으로 만들어졌다 그러나!<br>
+퍼블릭IP:8080 로 접속하면 실행이 되야 하는데 안된다<br>
+이유는 호스트(ec2 instance)의 8080포트가 열려있지 않기때문!<br>
+aws ec2의 네트워크 및 보안 - 보안그룹에서 호스트pc(ec2)에 적용된 보안그룹을 선택하고 새로운 보안그룹을 추가해서 8080포트를 열어준다<br>
+<img width = 1000 src="https://user-images.githubusercontent.com/81700507/227772518-95d6a2b3-a90b-4ca2-86d5-b18e295f3a02.png">
+그리고 다시 http://3.39.137.68:8080/ 에 접속하면<br>
+<img width = 300 src="https://user-images.githubusercontent.com/81700507/227772875-c2b9203f-db84-4743-bb97-cde71c4fa605.png">
+접속에 성공했다<hr><br>
+</p>
 
 
 
