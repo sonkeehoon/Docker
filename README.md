@@ -6,7 +6,7 @@ https://www.youtube.com/playlist?list=PLuHgQVnccGMDeMJsGq2O-55Ymtx0IdKWf</p>
 1,2강은 수업소개 및 설치 강의이기 때문에 내용 정리는 생략했다</p>
 <hr><p><h2>3강 image pull</h2>
 <center><img width = 500 src="https://user-images.githubusercontent.com/81700507/226579856-8ce93236-bf63-4c1b-8c1a-398146607d87.png"></center>
-<p><이미지 출처 : 생활코딩 Docker 입문수업 - 3. 이미지 pull></p><br>
+<p><이미지 출처 : 생활코딩 Docker 입문수업 - 3. 이미지 pull></p>
   
 app store에서 program을 다운 받는다 => <strong>docker hub</strong>에서 <strong>image</strong>를 다운받는다<br>
 program을 실행하면 process가 동작 => <strong>image</strong>를 실행하면 <strong>container</strong>가 동작<br>
@@ -52,7 +52,7 @@ docker image를 삭제하고 싶다면 : sudo docker rmi [image]<hr><br></p>
 <p><h2>5강 network</h2>
 5강은 실습이나 명령어 보다는 이론 위주의 강의였다<br><br>
 <img width = 1000 height = 500 src="https://user-images.githubusercontent.com/81700507/227770613-e0286430-f638-48a4-ba0e-b42a03d8ca55.png">
-<p><이미지 출처 : 생활코딩 Docker 입문수업 - 5. 네트워크 pull></p><br>
+<p><이미지 출처 : 생활코딩 Docker 입문수업 - 5. 네트워크 pull></p>
 도커를 이용하면 웹서버가 컨테이너 안에 설치된다<br>
 이 컨테이너가 설치된 운영체제를 docker host 라고 부른다<br>
 하나의 호스트에는 여러개의 컨테이너가 만들어질 수 있다<br>
