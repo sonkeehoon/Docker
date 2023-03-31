@@ -77,7 +77,7 @@ aws ec2의 네트워크 및 보안 - 보안그룹에서 호스트pc(ec2)에 적�
 접속에 성공했다<hr><br>
 </p>
 
-<p><h2>6강 명령어 실행</h2>
+<p><h2>6강 명령어 실행(<ins>컨테이너 내부</ins> 진입)</h2>
 6강은 <ins>컨테이너 안</ins>으로 들어가서 명령을 실행하는 방법을 알아보려고 한다<br>
 컨테이너 안에서 명령어 실행 : docker exec [OPTIONS] CONTAINER COMMAND [ARG...]<br>
 docker exec ws3 ls<br>
