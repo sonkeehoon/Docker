@@ -109,8 +109,8 @@ apt install -y vim <br>
 vi index.html<br>
 <img width = 500 src="https://user-images.githubusercontent.com/81700507/229100666-43126051-413f-442f-92e5-2cd97da50794.png">
 웹페이지 소스를 찾았다<br>
-<img width = 500 src="https://user-images.githubusercontent.com/81700507/229101058-273c4b3d-78e4-4964-8a43-ff817e5186c6.png">
 Hello, Docker!로 내용을 바꿔보자<br>
+<img width = 500 src="https://user-images.githubusercontent.com/81700507/229101058-273c4b3d-78e4-4964-8a43-ff817e5186c6.png">
 <img width = 500 src="https://user-images.githubusercontent.com/81700507/229101500-dd8a65bb-e153-4a8b-b98c-6be5119872c5.png">
 변경사항이 적용 됐다!<hr><br>
 </p>
