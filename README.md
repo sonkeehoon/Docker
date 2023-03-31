@@ -46,8 +46,8 @@ sudo docker ps <br>
 sudo docker stop webserver<br>
 sudo docker rm webserver<br>
 <img width = 500 src="https://user-images.githubusercontent.com/81700507/226911771-079983db-1d5c-4833-ae5e-3c8f1376d000.png"><br>
-만약 실행중인 컨테이너를 강제로 삭제하고 싶다면 : sudo docker rm --force [container]<br>
-docker image를 삭제하고 싶다면 : sudo docker rmi [image]<hr><br></p>
+만약 실행중인 컨테이너를 <ins>강제로 삭제</ins>하고 싶다면 : sudo docker rm --force [container]<br>
+docker <ins>image를 삭제</ins>하고 싶다면 : sudo docker rmi [image]<hr><br></p>
 
 <p><h2>5강 network</h2>
 5강은 실습이나 명령어 보다는 이론 위주의 강의였다<br><br>
@@ -76,6 +76,59 @@ aws ec2의 네트워크 및 보안 - 보안그룹에서 호스트pc(ec2)에 적�
 <img width = 300 src="https://user-images.githubusercontent.com/81700507/227772875-c2b9203f-db84-4743-bb97-cde71c4fa605.png">
 접속에 성공했다<hr><br>
 </p>
+
+<p><h2>6강 명령어 실행</h2>
+6강은 <ins>컨테이너 안</ins>으로 들어가서 명령을 실행하는 방법을 알아보려고 한다<br>
+컨테이너 안에서 명령어 실행 : docker exec [OPTIONS] CONTAINER COMMAND [ARG...]<br>
+docker exec ws3 ls<br>
+<img width = 500 src="https://user-images.githubusercontent.com/81700507/229092635-d50fc894-f710-47d2-b5a8-c139f8d0637a.png">
+그런데 컨테이너와 <ins>지속적으로</ins> 연결을 유지하면서 계속 명령을 전달하고 싶어졌다 그럴때는<br>
+docker exec -it ws3 /bin/sh <br>
+-it 옵션의 i는 --interactive t는 --tty를 의미한다<br>
+<img width = 500 src="https://user-images.githubusercontent.com/81700507/229094552-c8e57aab-fd2b-44ad-a44f-a9e4979ff2e1.png">
+컨테이너 안으로 성공적으로 들어왔다<br>
+컨테이너 밖으로 나가고 싶다면 : exit<br>
+<img width = 500 src="https://user-images.githubusercontent.com/81700507/229095610-564295ab-22dd-40e4-8c9f-8bd668f32cef.png">
+host로 돌아왔다<br>
+그리고 컨테이너에서 /bin/sh로 본쉘을 실행했는데 이고잉 강사님이 본쉘을 실행시킨 이유는<br>
+컨테이너 안에 bash쉘이 없는 경우가 있기 때문이라고 하셨다<br>
+하지만 본쉘은 기능이 제한적이기 때문에 처음에는 /bin/bash로 실행하고<br>
+실행이 안되면 /bin/sh로 실행하면 될것 같다<br>
+아무튼 접속을 했고 이제 <ins>웹페이지를 수정</ins>해보자<br>
+처음에는 /usr/local/apache2 경로가 설정되어있다<br>
+<img width = 300 src="https://user-images.githubusercontent.com/81700507/229098516-ce81b109-ec73-49cc-9c74-2db8eb3ee912.png">
+httpd 컨테이너의 index.html 파일위치는 https://hub.docker.com/_/httpd 에서 확인 가능하다 <br>
+위 링크에/usr/local/apache2/htdocs라고 설명이 나와있으니 그 경로로 이동하면 된다<br>
+그리고 문서 편집을 해야 하는데 컨테이너는 기본적으로 무게를 가볍게 만들기 때문에<br>
+vi나 nano같은 에디터가 기본설치가 안되어있어서 설치를 해야한다<br>
+우선 apt update 부터<br>
+<img width = 500 src="https://user-images.githubusercontent.com/81700507/229100113-36909a5d-a2d7-4a1c-bcd9-11aad90e6b81.png">
+그리고 설치를 진행<br>
+apt install -y vim <br>
+설치가 끝나면 실행하자<br>
+vi index.html<br>
+<img width = 500 src="https://user-images.githubusercontent.com/81700507/229100666-43126051-413f-442f-92e5-2cd97da50794.png">
+웹페이지 소스를 찾았다<br>
+<img width = 500 src="https://user-images.githubusercontent.com/81700507/229101058-273c4b3d-78e4-4964-8a43-ff817e5186c6.png">
+Hello, Docker!로 내용을 바꿔보자<br>
+<img width = 500 src="https://user-images.githubusercontent.com/81700507/229101500-dd8a65bb-e153-4a8b-b98c-6be5119872c5.png">
+변경사항이 적용 됐다!<hr><br>
+</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
