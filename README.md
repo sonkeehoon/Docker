@@ -98,8 +98,8 @@ host로 돌아왔다<br>
 처음에는 /usr/local/apache2 경로가 설정되어있다<br>
 <img width = 300 src="https://user-images.githubusercontent.com/81700507/229098516-ce81b109-ec73-49cc-9c74-2db8eb3ee912.png">
 httpd 컨테이너의 index.html 파일위치는 https://hub.docker.com/_/httpd 에서 확인 가능하다 <br>
-위 링크에/usr/local/apache2/htdocs라고 설명이 나와있으니 그 경로로 이동하면 된다<br>
-그리고 문서 편집을 해야 하는데 컨테이너는 기본적으로 무게를 가볍게 만들기 때문에<br>
+위 링크에 <ins>/usr/local/apache2/htdocs</ins>라고 설명이 나와있으니 그 경로로 이동하면 된다<br>
+그리고 문서 편집을 해야 하는데 컨테이너는 기본적으로 가벼운 무게로 만들어지기 때문에<br>
 vi나 nano같은 에디터가 기본설치가 안되어있어서 설치를 해야한다<br>
 우선 apt update 부터<br>
 <img width = 500 src="https://user-images.githubusercontent.com/81700507/229100113-36909a5d-a2d7-4a1c-bcd9-11aad90e6b81.png">
