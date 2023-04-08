@@ -1,3 +1,4 @@
+![image](https://user-images.githubusercontent.com/81700507/230723145-e37e88d4-8d90-4044-9e03-136df1b943b5.png)
 <h1>Docker를 혼자 공부하면서 기록을 남기는 곳</h1>
 <p>참고 영상 : 생활코딩 Docker 입문 수업<br>
 https://www.youtube.com/playlist?list=PLuHgQVnccGMDeMJsGq2O-55Ymtx0IdKWf</p>
