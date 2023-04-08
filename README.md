@@ -123,6 +123,29 @@ Hello, Docker!로 내용을 바꿔보자<br>
 변경사항이 적용 됐다!<hr><br>
 </p>
 
+<p><h2>7강 호스트와 컨테이너의 <ins>파일시스템</ins> 연결</h2>
+지금까지는 컨테이너 안에 접속해서 직접 파일을 수정했었다.<br>
+그런데 이런 방식은 불편하고 위험한 일을 초래할수도 있다<br>
+예를들어 현재 상태에서 <ins>container가 삭제</ins>된다면 index.html 파일 내용까지 전부 날라가 버린다 (엄청난 재앙!)<br>
+물론 컨테이너를 삭제하지 않으면 된다 하지만..<br>
+우리가 컨테이너를 쓰는 궁극적인 이유는 필요할때 <ins>언제든 생성</ins>하고 필요 없을때는 <ins>언제든 삭제</ins>할수 있어야 하기 때문에<br>
+그래서 호스트의 웹페이지(/var/www/html/index.html)의 수정사항을 컨테이너 속 웹페이지 경로(/usr/local/apache2/htdocs)에도 반영되게 하는것이 목적이다<br>
+이게 된다면 컨테이너가 날라가도 우리의 소스코드는 호스트에 그대로 남아있기 때문에 보다 안전한 개발이 가능하다<br>
+실행은 컨테이너에게 맡기고 파일 수정작업은 호스트에서 진행하는 방법을 알아보려고 한다<br>
+우선 이번엔 다른포트를 사용할것이기 때문에 AWS콘솔에 가서 <ins>8888번</ins> 포트를 열어주자<br>
+<img width = 1000 src="https://user-images.githubusercontent.com/81700507/230721101-8eb70ef7-9d69-4bf1-b8f0-b74394605872.png"><br>
+ec2 인스턴스의 보안그룹을 수정해서 8888번 포트를 열어줬다<br>
+이제 8888번 포트를 연결할 새 컨테이너를 만들자<br>
+host의 웹페이지 위치와 컨테이너의 웹페이지 위치가 연결된 새 컨테이너를 만드는 명령어<br>
+sudo docker run -p 8888:80 -v /var/www/html:/usr/local/apache2/htdocs httpd <br>
+<img width = 1000 src="https://user-images.githubusercontent.com/81700507/230721473-7caec4ef-8463-4756-8e56-9dc9dd4d961f.png"><br>
+<ins>퍼블릭IP:8888</ins>로 접속해보니 <ins>퍼블릭IP:80</ins>과 동일한 웹페이지가 나왔다(성공!)<br>
+이제 호스트의 index.html을 수정해서 버전관리를 할수있고<br>
+vscode등의 에디터를 사용해서 호스트의 index.html을 수정해도 컨테이너 안의 내용까지 바뀐다<br>
+실제 현업에서 웹페이지를 만들고 테스트 할때는 이런방식이 매우매우 유용할것 같다<br>
+<hr><br>
+</p>
+
 
 
 
