@@ -13,7 +13,10 @@ https://www.youtube.com/playlist?list=PLuHgQVnccGMDeMJsGq2O-55Ymtx0IdKWf</p>
 - 실습 환경 : AWS EC2 인스턴스(ubuntu os)에 vscode remote ssh로 접속해서 docker를 설치했다
 - 설치 방법 : https://docs.docker.com/engine/install/ubuntu/
 - 1,2강은 수업소개 및 설치 강의이기 때문에 내용 정리는 생략했다
-<hr><p><h2>3강 image pull</h2>
+<hr>
+
+## `3강` image pull
+<p>
 <center><img width = 500 src="https://user-images.githubusercontent.com/81700507/226579856-8ce93236-bf63-4c1b-8c1a-398146607d87.png"></center>
 <p><이미지 출처 : 생활코딩 Docker 입문수업 - 3. 이미지 pull></p>
   
@@ -32,33 +35,35 @@ sudo docker images (성공적으로 만들었는지 확인)<br>
 - image 삭제 명령어 : sudo docker rmi [image ID]<hr><br>
 </p>
 
-<p><h2>4강 container run</h2>
+## `4강` container run
+<p>
 run : image를 실행시켜서 container를 만드는 행위 <br>
 sudo docker run httpd <br>
-<img width = 600 src="https://user-images.githubusercontent.com/81700507/226902543-6a84b71d-24e5-462a-8d6e-b7bc42041423.png"><br>
+<img width = 600 src="https://user-images.githubusercontent.com/81700507/226902543-6a84b71d-24e5-462a-8d6e-b7bc42041423.png"><br><br>
 실행중인 컨테이너를 확인하려면 새로운 터미널 창에서<br>
 sudo docker ps <br>
-<img width = 600 src="https://user-images.githubusercontent.com/81700507/226903492-0978e9c1-3502-4d12-a2df-f63422ac64d5.png"><br>
+<img width = 600 src="https://user-images.githubusercontent.com/81700507/226903492-0978e9c1-3502-4d12-a2df-f63422ac64d5.png"><br><br>
 컨테이너 이름을 "webserver"로 지정해서 만들려면 : sudo docker run --name webserver httpd<br>
 실행중인 docker를 끄고싶을때 : sudo docker stop webserver<br>
 모든 컨테이너 목록을 보고싶을때 : sudo docker ps -a<br>
 # stop 했다고 container가 사라지는것이 아니다!<br>
-<img width = 700 src="https://user-images.githubusercontent.com/81700507/226907492-d44acb64-2821-4d4d-a12b-e47b90507317.png"><br>
+<img width = 700 src="https://user-images.githubusercontent.com/81700507/226907492-d44acb64-2821-4d4d-a12b-e47b90507317.png"><br><br>
 중지된 webserver를 다시 실행하려면 : sudo docker start webserver<br>
 로그를 보려면 : sudo docker logs webserver<br>
 실시간으로(docker run 했을때처럼) 로그를 보고싶으면 : sudo docker logs -f webserver<br>
 컨테이너를 삭제하는 명령어 : sudo docker rm webserver<br>
 그런데 컨테이너를 삭제하려는데 에러가 떴다<br>
-<img width = 700 src="https://user-images.githubusercontent.com/81700507/226910668-15efa968-c5ba-43e9-bbc7-440ee3487b33.png"><br>
+<img width = 700 src="https://user-images.githubusercontent.com/81700507/226910668-15efa968-c5ba-43e9-bbc7-440ee3487b33.png"><br><br>
 실행중인 컨테이너를 삭제하려고 했기때문에 에러가 뜬것이다<br>
 실행중인 컨테이너를 먼저 stop 하고 삭제하면 된다<br>
 sudo docker stop webserver<br>
 sudo docker rm webserver<br>
-<img width = 500 src="https://user-images.githubusercontent.com/81700507/226911771-079983db-1d5c-4833-ae5e-3c8f1376d000.png"><br>
+<img width = 500 src="https://user-images.githubusercontent.com/81700507/226911771-079983db-1d5c-4833-ae5e-3c8f1376d000.png"><br><br>
 만약 실행중인 컨테이너를 <ins>강제로 삭제</ins>하고 싶다면 : sudo docker rm --force [container]<br>
 docker <ins>image를 삭제</ins>하고 싶다면 : sudo docker rmi [image]<hr><br></p>
 
-<p><h2>5강 network</h2>
+## `5강` network
+<p>
 5강은 실습이나 명령어 보다는 이론 위주의 강의였다<br><br>
 <img width = 1000 height = 500 src="https://user-images.githubusercontent.com/81700507/227770613-e0286430-f638-48a4-ba0e-b42a03d8ca55.png">
 <p><이미지 출처 : 생활코딩 Docker 입문수업 - 5. 네트워크 pull></p>
@@ -86,7 +91,8 @@ aws ec2의 네트워크 및 보안 - 보안그룹에서 호스트pc(ec2)에 적�
 접속에 성공했다<hr><br>
 </p>
 
-<p><h2>6강 명령어 실행(<ins>컨테이너 내부</ins> 진입)</h2>
+## `6강` 명령어 실행(<ins>컨테이너 내부</ins> 진입)
+<p>
 6강은 <ins>컨테이너 안</ins>으로 들어가서 명령을 실행하는 방법을 알아보려고 한다<br>
 컨테이너 안에서 명령어 실행 : docker exec [OPTIONS] CONTAINER COMMAND [ARG...]<br>
 docker exec ws3 ls<br>
@@ -124,7 +130,8 @@ Hello, Docker!로 내용을 바꿔보자<br>
 변경사항이 적용 됐다!<hr><br>
 </p>
 
-<p><h2>7강 호스트와 컨테이너의 <ins>파일시스템</ins> 연결</h2>
+## `7강` 호스트와 컨테이너의 <ins>파일시스템</ins> 연결
+<p>
 지금까지는 컨테이너 안에 접속해서 직접 파일을 수정했었다.<br>
 그런데 이런 방식은 불편하고 위험한 일을 초래할수도 있다<br>
 예를들어 현재 상태에서 <ins>container가 삭제</ins>된다면 index.html 파일 내용까지 전부 날라가 버린다 (엄청난 재앙!)<br>
@@ -148,8 +155,7 @@ vscode등의 에디터를 사용해서 호스트의 index.html을 수정해도 �
 <hr><br>
 </p>
 
-## docker 기초내용 마무리
-- 2023년 4월 8일
+## `2023-04-08` docker 기초내용 마무리
 - 지금까지 docker의 기초적인 내용을 정리해놓았다. docker를 쓸일이 생기면 이 글을 참고할 생각이다
 - 지금 다시 읽어보니 나름 정리를 잘 해놓은것 같아서 뿌듯하다
 - 그리고 조금 더 고급기능을 공부하게 되면 하단에 이어서 내용을 추가할 예정이다
