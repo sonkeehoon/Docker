@@ -31,7 +31,7 @@ sudo docker pull httpd (apache 웹서버의 docker image 다운로드)<br>
 리눅스 환경이기 때문에 sudo를 붙였다(mac os의 경우 모든 명령어에서 sudo를 빼면 된다)<br>
 <img width = 500 src="https://user-images.githubusercontent.com/81700507/226581437-458aaf00-73ff-4255-9a38-4c89ecf9fecb.png"><br><br>
 sudo docker images (성공적으로 만들었는지 확인)<br>
-<img width = 500 src="https://user-images.githubusercontent.com/81700507/226582323-c083a92d-8591-4cbd-bbfa-00bf095f3c82.png"><br>
+<img width = 500 src="https://user-images.githubusercontent.com/81700507/226582323-c083a92d-8591-4cbd-bbfa-00bf095f3c82.png"><br><br>
 - image 삭제 명령어 : sudo docker rmi [image ID]<hr><br>
 </p>
 
@@ -65,7 +65,7 @@ docker <ins>image를 삭제</ins>하고 싶다면 : sudo docker rmi [image]<hr><
 ## `5강` network
 <p>
 5강은 실습이나 명령어 보다는 이론 위주의 강의였다<br><br>
-<img width = 1000 height = 500 src="https://user-images.githubusercontent.com/81700507/227770613-e0286430-f638-48a4-ba0e-b42a03d8ca55.png">
+<img width = 1000 height = 500 src="https://user-images.githubusercontent.com/81700507/227770613-e0286430-f638-48a4-ba0e-b42a03d8ca55.png"><br><br>
 <p><이미지 출처 : 생활코딩 Docker 입문수업 - 5. 네트워크 pull></p>
 도커를 이용하면 웹서버가 컨테이너 안에 설치된다<br>
 이 컨테이너가 설치된 운영체제를 docker host 라고 부른다<br>
@@ -80,15 +80,15 @@ docker <ins>image를 삭제</ins>하고 싶다면 : sudo docker rmi [image]<hr><
 이렇게 연결된 포트로 신호를 전달하는것을 '포트포워딩' 이라고 한다<br>
 sudo docker run [OPTIONS] IMAGE [COMMAND] [ARG..]<br>
 호스트의 8080포트와 컨테이너의 80번 포트를 연결하기 : sudo docker run --name ws3 -p 8080:80 httpd
-<img width = 1000 src="https://user-images.githubusercontent.com/81700507/227772234-eddfc619-4d47-45ca-993f-6644fb42b3f5.png">
+<img width = 1000 src="https://user-images.githubusercontent.com/81700507/227772234-eddfc619-4d47-45ca-993f-6644fb42b3f5.png"><br><br>
 컨테이너는 성공적으로 만들어졌다 그러나!<br>
 퍼블릭IP:8080 로 접속하면 실행이 되야 하는데 안된다<br>
 이유는 호스트(ec2 instance)의 8080포트가 열려있지 않기때문!<br>
 aws ec2의 네트워크 및 보안 - 보안그룹에서 호스트pc(ec2)에 적용된 보안그룹을 선택하고 새로운 보안그룹을 추가해서 8080포트를 열어준다<br>
-<img width = 1000 src="https://user-images.githubusercontent.com/81700507/227772518-95d6a2b3-a90b-4ca2-86d5-b18e295f3a02.png">
+<img width = 1000 src="https://user-images.githubusercontent.com/81700507/227772518-95d6a2b3-a90b-4ca2-86d5-b18e295f3a02.png"><br><br>
 그리고 다시 http://3.39.137.68:8080/ 에 접속하면<br>
-<img width = 300 src="https://user-images.githubusercontent.com/81700507/227772875-c2b9203f-db84-4743-bb97-cde71c4fa605.png">
-접속에 성공했다<hr><br>
+<img width = 300 src="https://user-images.githubusercontent.com/81700507/227772875-c2b9203f-db84-4743-bb97-cde71c4fa605.png"><br><br>
+접속 성공!<hr><br>
 </p>
 
 ## `6강` 명령어 실행(<ins>컨테이너 내부</ins> 진입)
@@ -96,14 +96,14 @@ aws ec2의 네트워크 및 보안 - 보안그룹에서 호스트pc(ec2)에 적�
 6강은 <ins>컨테이너 안</ins>으로 들어가서 명령을 실행하는 방법을 알아보려고 한다<br>
 컨테이너 안에서 명령어 실행 : docker exec [OPTIONS] CONTAINER COMMAND [ARG...]<br>
 docker exec ws3 ls<br>
-<img width = 500 src="https://user-images.githubusercontent.com/81700507/229092635-d50fc894-f710-47d2-b5a8-c139f8d0637a.png">
+<img width = 500 src="https://user-images.githubusercontent.com/81700507/229092635-d50fc894-f710-47d2-b5a8-c139f8d0637a.png"><br><br>
 그런데 컨테이너와 <ins>지속적으로</ins> 연결을 유지하면서 계속 명령을 전달하고 싶어졌다 그럴때는<br>
 docker exec -it ws3 /bin/sh <br>
 -it 옵션의 i는 --interactive t는 --tty를 의미한다<br>
-<img width = 500 src="https://user-images.githubusercontent.com/81700507/229094552-c8e57aab-fd2b-44ad-a44f-a9e4979ff2e1.png">
+<img width = 500 src="https://user-images.githubusercontent.com/81700507/229094552-c8e57aab-fd2b-44ad-a44f-a9e4979ff2e1.png"><br><br>
 컨테이너 안으로 성공적으로 들어왔다<br>
 컨테이너 밖으로 나가고 싶다면 : exit<br>
-<img width = 500 src="https://user-images.githubusercontent.com/81700507/229095610-564295ab-22dd-40e4-8c9f-8bd668f32cef.png">
+<img width = 500 src="https://user-images.githubusercontent.com/81700507/229095610-564295ab-22dd-40e4-8c9f-8bd668f32cef.png"><br><br>
 host로 돌아왔다<br>
 그리고 컨테이너에서 /bin/sh로 본쉘을 실행했는데 이고잉 강사님이 본쉘을 실행시킨 이유는<br>
 컨테이너 안에 bash쉘이 없는 경우가 있기 때문이라고 하셨다<br>
@@ -111,22 +111,22 @@ host로 돌아왔다<br>
 실행이 안되면 /bin/sh로 실행하면 될것 같다<br>
 아무튼 접속을 했고 이제 <ins>웹페이지를 수정</ins>해보자<br>
 처음에는 /usr/local/apache2 경로가 설정되어있다<br>
-<img width = 300 src="https://user-images.githubusercontent.com/81700507/229098516-ce81b109-ec73-49cc-9c74-2db8eb3ee912.png">
+<img width = 300 src="https://user-images.githubusercontent.com/81700507/229098516-ce81b109-ec73-49cc-9c74-2db8eb3ee912.png"><br><br>
 httpd 컨테이너의 index.html 파일위치는 https://hub.docker.com/_/httpd 에서 확인 가능하다 <br>
 위 링크에 <ins>/usr/local/apache2/htdocs</ins>라고 설명이 나와있으니 그 경로로 이동하면 된다<br>
 그리고 문서 편집을 해야 하는데 컨테이너는 기본적으로 가벼운 무게로 만들어지기 때문에<br>
 vi나 nano같은 에디터가 기본설치가 안되어있어서 설치를 해야한다<br>
 우선 apt update 부터<br>
-<img width = 500 src="https://user-images.githubusercontent.com/81700507/229100113-36909a5d-a2d7-4a1c-bcd9-11aad90e6b81.png">
+<img width = 500 src="https://user-images.githubusercontent.com/81700507/229100113-36909a5d-a2d7-4a1c-bcd9-11aad90e6b81.png"><br><br>
 그리고 설치를 진행<br>
 apt install -y vim <br>
 설치가 끝나면 실행하자<br>
 vi index.html<br>
-<img width = 500 src="https://user-images.githubusercontent.com/81700507/229100666-43126051-413f-442f-92e5-2cd97da50794.png">
+<img width = 500 src="https://user-images.githubusercontent.com/81700507/229100666-43126051-413f-442f-92e5-2cd97da50794.png"><br><br>
 웹페이지 소스를 찾았다<br>
 Hello, Docker!로 내용을 바꿔보자<br>
-<img width = 500 src="https://user-images.githubusercontent.com/81700507/229101058-273c4b3d-78e4-4964-8a43-ff817e5186c6.png">
-<img width = 500 src="https://user-images.githubusercontent.com/81700507/229101500-dd8a65bb-e153-4a8b-b98c-6be5119872c5.png">
+<img width = 500 src="https://user-images.githubusercontent.com/81700507/229101058-273c4b3d-78e4-4964-8a43-ff817e5186c6.png"><br><br>
+<img width = 500 src="https://user-images.githubusercontent.com/81700507/229101500-dd8a65bb-e153-4a8b-b98c-6be5119872c5.png"><br><br>
 변경사항이 적용 됐다!<hr><br>
 </p>
 
@@ -140,14 +140,14 @@ Hello, Docker!로 내용을 바꿔보자<br>
 그래서 호스트의 웹페이지(/var/www/html/index.html)의 수정사항을 <br>
 컨테이너 속 웹페이지 경로(/usr/local/apache2/htdocs)에도 반영되게 하는것이 목적이다<br>
 이게 된다면 컨테이너가 날라가도 우리의 소스코드는 호스트에 그대로 남아있기 때문에 보다 안전한 개발이 가능하다<br>
-실행은 컨테이너에게 맡기고 개발 및 수정은 호스트에서 진행할수 있게 보자<br>
+실행은 컨테이너에게 맡기고 개발 및 수정은 호스트에서 진행할수 있게 해보자<br>
 우선, 이번엔 다른포트(<ins>8888번</ins>)를 사용할것이기 때문에 AWS콘솔에 가서 포트를 열어주자<br>
-<img width = 1000 src="https://user-images.githubusercontent.com/81700507/230721101-8eb70ef7-9d69-4bf1-b8f0-b74394605872.png">
+<img width = 1000 src="https://user-images.githubusercontent.com/81700507/230721101-8eb70ef7-9d69-4bf1-b8f0-b74394605872.png"><br><br>
 ec2 인스턴스의 보안그룹을 수정해서 포트를 열어줬다<br>
 이제 8888번 포트를 연결할 새 컨테이너를 만들자<br>
 <ins>host의 웹페이지 위치</ins>와 <ins>컨테이너의 웹페이지 위치</ins>가 연결된 새 컨테이너를 만드는 명령어<br>
 sudo docker run -p 8888:80 -v /var/www/html:/usr/local/apache2/htdocs httpd <br>
-<img width = 1000 src="https://user-images.githubusercontent.com/81700507/230721473-7caec4ef-8463-4756-8e56-9dc9dd4d961f.png">
+<img width = 1000 src="https://user-images.githubusercontent.com/81700507/230721473-7caec4ef-8463-4756-8e56-9dc9dd4d961f.png"><br><br>
 <ins>퍼블릭IP:8888</ins>로 접속해보니 <ins>퍼블릭IP:80</ins>과 동일한 웹페이지가 나왔다(성공!)<br>
 이제 호스트의 index.html을 수정해서 버전관리를 할수있고<br>
 vscode등의 에디터를 사용해서 호스트의 index.html을 수정해도 컨테이너 안의 내용까지 바뀐다<br>
