@@ -1,8 +1,8 @@
 ![image](https://user-images.githubusercontent.com/81700507/230723145-e37e88d4-8d90-4044-9e03-136df1b943b5.png)
-<h1>Docker를 혼자 공부하면서 기록을 남기는 곳</h1>
+# `Docker`를 혼자 공부하면서 기록을 남기는 곳
 <p>참고 영상 : 생활코딩 Docker 입문 수업<br>
 https://www.youtube.com/playlist?list=PLuHgQVnccGMDeMJsGq2O-55Ymtx0IdKWf</p>
-<h3> 이 폴더를 만들게된 계기</h3>
+<h3> 이 문서를 만들게된 계기</h3>
 
 - 몇개월 전에 국비지원 과정에서 docker를 배우기는 했었다
 - 그런데 거의 6개월 정도 사용을 안하다보니 사용법을 많이 까먹어 버렸다
