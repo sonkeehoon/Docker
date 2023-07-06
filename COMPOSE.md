@@ -25,11 +25,13 @@ Docker의 기초를 공부한 뒤 추가적인 공부를 하는공간
 - 이러한 환경을 docker compose로 만들어보자
 <br>
 
-- 우선 이 링크로 접속하자
+- 우분투 홈 디렉터리에 DOCKER-COMPOSE-SAMPLE라는 폴더를 만들고 폴더 안으로 들어가자
+- 아래 링크를 띄워놓자(강의자료)
   - https://bit.ly/docker-compose-sample
   - command부분과 아래 docker-compose.yml은 같은 결과를 보여준다
-- command부분을 일단 차례대로 실행해보자
-  - 콘솔에서 docker network create wordpress_net
+- command부분을 일단 차례대로 실행해보자(터미널을 3개정도 분할해서 띄워놓자)
+  - 1번 터미널에서 docker network create wordpress_net 실행하고
+  - mysql 컨테이너를 생성하는 명령어도 실행하자
   - docker \
     run \
     --name "db" \
@@ -40,8 +42,40 @@ Docker의 기초를 공부한 뒤 추가적인 공부를 하는공간
     -e "MYSQL_PASSWORD=123456" \
     --network wordpress_net \
     mysql:5.7
-  -
-  -
+  - 성공하면 db_data라는 폴더가 생성된다
+  - 2번 터미널에서 wordpress를 실행하는 명령어를 실행하자
+  - docker \
+    run \
+    --name app \
+    -v "$(pwd)/app_data:/var/www/html" \
+    -e "WORDPRESS_DB_HOST=db" \
+    -e "WORDPRESS_DB_USER=wordpress_user" \
+    -e "WORDPRESS_DB_NAME=wordpress" \
+    -e "WORDPRESS_DB_PASSWORD=123456" \
+    -e "WORDPRESS_DEBUG=1" \
+    -p 8080:80 \
+    --network wordpress_net \
+    wordpress:latest
+  - 성공하면 app_data라는 폴더가 생성된다
+  - 잘 작동할까? 한번 접속을 해보자
+    - http://3.39.137.68:8080/
+    <br>
+    
+  ![image](https://github.com/sonkeehoon/Docker/assets/81700507/31ece19b-239e-4ce4-8a28-357050867d06)
+  - 이런 화면이 뜨면 성공이다
+    - wordpress를 설치하는 페이지라고 하는데, continue를 누르지는 않았다
+
+- 이번엔 이렇게 복잡한 명령어를 기억할 필요없이 compose-up으로 같은결과를 내고싶다
+- 우선 방금 만든 컨테이너와 네트워크들을 모두 지우기위해 3개의 명령어를 실행하자
+  - sudo docker rm -f app
+  - sudo docker rm -f db
+  - sudo docker network rm wordpress_net
+- 컨테이너와 같이 생성된 2개의 폴더도 지워주자
+  - sudo rm -rf app_data db_data
+- docker-compose.yml이라는 새 파일을 하나 만들자
+  - ![image](https://github.com/sonkeehoon/Docker/assets/81700507/2a025e4c-daa9-4664-ad32-2073d69db700)
+- 5:05 부터
+
   
 
 
