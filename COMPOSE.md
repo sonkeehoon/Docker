@@ -4,7 +4,8 @@
 Docker의 기초를 공부한 뒤 추가적인 공부를 하는공간
 - 강의 자료 : https://www.youtube.com/watch?v=EK6iYRCIjYs
 - 선수 과목 : Docker 기초
-  - https://www.youtube.com/playlist?list=PLuHgQVnccGMDeMJsGq2O-55Ymtx0IdKWf
+  - https://github.com/sonkeehoon/Docker/blob/main/README.md
+  - 참고영상 : https://www.youtube.com/playlist?list=PLuHgQVnccGMDeMJsGq2O-55Ymtx0IdKWf 
 <hr><br>
 
 ## `Compose`
