@@ -3,9 +3,11 @@
 # Docker Compose 
 Docker의 기초를 공부한 뒤 추가적인 공부를 하는공간
 - 강의 자료 : https://www.youtube.com/watch?v=EK6iYRCIjYs
-- 선수 과목 : Docker 기초
-  - https://github.com/sonkeehoon/Docker/blob/main/README.md
-  - 참고영상 : https://www.youtube.com/playlist?list=PLuHgQVnccGMDeMJsGq2O-55Ymtx0IdKWf 
+- 선수 과목
+  - Docker 기초
+    - https://github.com/sonkeehoon/Docker/blob/main/README.md
+    - 참고영상 : https://www.youtube.com/playlist?list=PLuHgQVnccGMDeMJsGq2O-55Ymtx0IdKWf
+- 실습 환경 : AWS EC2 인스턴스(ubuntu os)에 vscode remote ssh로 접속해서 docker를 설치했다
 <hr><br>
 
 ## `Compose`
@@ -74,11 +76,31 @@ Docker의 기초를 공부한 뒤 추가적인 공부를 하는공간
 - 컨테이너와 같이 생성된 2개의 폴더도 지워주자
   - sudo rm -rf app_data db_data
 - docker-compose.yml이라는 새 파일을 하나 만들자
-  - ![image](https://github.com/sonkeehoon/Docker/assets/81700507/2a025e4c-daa9-4664-ad32-2073d69db700)
-- 5:05 부터
+  - ![image](https://github.com/sonkeehoon/Docker/assets/81700507/2a025e4c-daa9-4664-ad32-2073d69db700)  
+  - 아래 링크로 접속해서 docker-compose.yml부분을 복사해서 방금 만든 yml파일에 붙여넣자
+    - https://bit.ly/docker-compose-sample
+    - ![image](https://github.com/sonkeehoon/Docker/assets/81700507/2d1fdcb9-d0be-46b5-a531-93b0728aa1ac)
+  - 우선 docker-compose를 설치하자
+    - sudo apt-get install docker-compose
+  - 설치가 됐으면 실행하자
+    - sudo docker-compose up
+    - ![image](https://github.com/sonkeehoon/Docker/assets/81700507/4864eecd-d8da-4edc-8bfb-1932b5f92f82)
+    - 아까와 동일하게 2개의 폴더가 생성됐다
+  - 설치가 잘 됐는지 확인해보자
+    - http://3.39.137.68:8080/
+    - ![image](https://github.com/sonkeehoon/Docker/assets/81700507/984a085f-85f6-4203-858f-6be643aac931)
+    - 아까와 같은 wordpress 설치안내 화면이 잘 뜬다
+  - docker-compose로 실행한 컨테이너들을 끄고싶다면
+    - sudo docker-compose down
+    - 실행이 종료됨
+- 우리가 했던것을 그림으로 나타내면 이러하다
+- ![image](https://github.com/sonkeehoon/Docker/assets/81700507/efe1459e-2909-478b-9577-49844ab527a7)
+- 글로 설명하기에는 복잡해서.. 아래 링크로 대체하려고 한다
+  - https://youtu.be/EK6iYRCIjYs?t=372
+  - shell 명령어와 yml파일 그리고 구체적인 그림들로 이해하기 쉽게 설명해주신다
 
-  
+<hr><br>
 
-
-
+## `2023-07-07` docker compose 마무리
+- <strong>docker를 더 많이 공부해보고 싶다면</strong> https://seomal.com/map/1/129
 <hr><br>
