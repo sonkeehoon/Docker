@@ -10,7 +10,7 @@ https://www.youtube.com/playlist?list=PLuHgQVnccGMDeMJsGq2O-55Ymtx0IdKWf</p>
 
 <br>
 
-- 실습 환경 : AWS EC2 인스턴스(ubuntu os)에 vscode remote ssh로 접속해서 docker를 설치했다
+- 실습 환경 : AWS EC2 인스턴스(ubuntu os), vscode remote ssh, docker
 - 설치 방법 : https://docs.docker.com/engine/install/ubuntu/
 - `1,2강`은 수업소개 및 설치 강의이기 때문에 내용 정리는 생략했다
 <hr>
