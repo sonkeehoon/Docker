@@ -69,11 +69,11 @@ Docker의 기초를 공부한 뒤 추가적인 공부를 하는공간
     - wordpress를 설치하는 페이지라고 하는데, continue를 누르지는 않았다
 
 - 이번엔 이렇게 복잡한 명령어를 기억할 필요없이 compose-up으로 같은결과를 내고싶다
-- 우선 방금 만든 컨테이너와 네트워크들을 모두 지우기위해 3개의 명령어를 실행하자
+- 방금 만든 컨테이너와 네트워크들을 모두 지우기위해 3개의 명령어를 실행하자
   - sudo docker rm -f app
   - sudo docker rm -f db
   - sudo docker network rm wordpress_net
-- 컨테이너와 같이 생성된 2개의 폴더도 지워주자
+- 컨테이너와 같이 host에 생성된 2개의 폴더도 지워주자
   - sudo rm -rf app_data db_data
 - docker-compose.yml이라는 새 파일을 하나 만들자
   - ![image](https://github.com/sonkeehoon/Docker/assets/81700507/2a025e4c-daa9-4664-ad32-2073d69db700)  
@@ -83,7 +83,7 @@ Docker의 기초를 공부한 뒤 추가적인 공부를 하는공간
   - 우선 docker-compose를 설치하자
     - sudo apt-get install docker-compose
   - 설치가 됐으면 실행하자
-    - sudo docker-compose up
+    - <ins>sudo docker-compose up</ins>
     - ![image](https://github.com/sonkeehoon/Docker/assets/81700507/4864eecd-d8da-4edc-8bfb-1932b5f92f82)
     - 아까와 동일하게 2개의 폴더가 생성됐다
   - 설치가 잘 됐는지 확인해보자
@@ -102,5 +102,6 @@ Docker의 기초를 공부한 뒤 추가적인 공부를 하는공간
 <hr><br>
 
 ## `2023-07-07` docker compose 마무리
+- docker compose란 명령어 입력 없이 yml파일에 명세된 대로 컨테이너들을 만들어주는 명령어다
 - <strong>docker를 더 많이 공부해보고 싶다면</strong> https://seomal.com/map/1/129
 <hr><br>
