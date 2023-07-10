@@ -2,6 +2,7 @@
 
 # Docker Compose 
 Docker의 기초를 공부한 뒤 추가적인 공부를 하는공간
+- 공부 순서 : Docker 기초 - Docker compose(현재)
 - 강의 자료 : https://www.youtube.com/watch?v=EK6iYRCIjYs
 - 선수 과목
   - Docker 기초
