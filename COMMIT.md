@@ -1,4 +1,5 @@
-![image](https://github.com/sonkeehoon/Docker/assets/81700507/794fec8f-f6f0-46a8-8b25-3afc1ecfa866)
+![image](https://github.com/sonkeehoon/Docker/assets/81700507/9a971556-226a-46c3-abb1-9dcf65733b26)
+
 
 # Docker Commit
 Docker의 기초를 공부한 뒤 추가적인 공부를 하는공간
