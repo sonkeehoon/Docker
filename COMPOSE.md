@@ -8,7 +8,7 @@ Docker의 기초를 공부한 뒤 추가적인 공부를 하는공간
   - Docker 기초
     - https://github.com/sonkeehoon/Docker/blob/main/README.md
     - 참고영상 : https://www.youtube.com/playlist?list=PLuHgQVnccGMDeMJsGq2O-55Ymtx0IdKWf
-- 실습 환경 : AWS EC2 인스턴스(ubuntu os)에 vscode remote ssh로 접속해서 docker를 설치했다
+- 실습 환경 : AWS EC2 인스턴스(ubuntu os), vscode remote ssh, docker
 <hr><br>
 
 ## `Compose`
