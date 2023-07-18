@@ -76,7 +76,7 @@ Docker의 기초를 공부한 뒤 추가적인 공부를 하는공간
   - node -v
     - ![image](https://github.com/sonkeehoon/Docker/assets/81700507/fb3becde-0252-4bca-a02d-d696693f2f27)
 - 2번 터미널
-  - python --version
+  - python3 --version
     - ![image](https://github.com/sonkeehoon/Docker/assets/81700507/5191be35-75c7-4cd8-a710-b89ba2302044)
   - 2번에서 node -v를 해도 실행되지 않는다
     - 1번 터미널에서 실행한 컨테이너와 독립적인 환경이기 때문에
