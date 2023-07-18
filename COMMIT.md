@@ -13,13 +13,48 @@ Docker의 기초를 공부한 뒤 추가적인 공부를 하는공간
 <hr><br>
 
 ## `Commit`
-- 도커의 image를 만드는 명령어가 commit
+- 도커의 image를 만드는 명령어를 commit이라고 한다
+
+![image](https://github.com/sonkeehoon/Docker/assets/81700507/3dada664-f255-467a-9ba6-299b82b7dcbc)
+
 - 도커의 동작 과정
   - docker hub에서 우리가 원하는 image를 다운로드(pull)
   - image를 run해서 컨테이너 생성
 - 직접만든 image를 만들어서 배포해보면 어떨까? 하는 생각
 - 내가 수정한 컨테이너를 다시 image로 바꾸는 명령이 바로 commit
 - 쉽게말해 run의 정반대라고 생각하면 된다
+- push는 이렇게 만든 image를 docker hub같은 레지스트리에 공개적으로 업로드하는 과정
+<br>
+
+이런 실험을 해보자<br>
+![image](https://github.com/sonkeehoon/Docker/assets/81700507/ea51b237-07a4-4ba7-aeeb-336e800353df)
+- 우리가 docker hub에서 가져온 어떤 컨테이너에 git을 설치했다고 가정하자
+  - 영상에선 ubuntu 이미지를 다운받았지만 나는 이미 ubuntu에서 작업중이기 때문에 centos7 image를 다운받았다
+- git을 설치한 이 컨테이너를 새로운 이미지로 만들자(앞으로 만들 컨테이너에 공통적으로 git을 설치해두기 위해)
+- 이 새로운 이미지로 여러 컨테이너들을 만들어보자(각각 PHP, Python, Nodejs등이 깔린)
+<br>
+
+- centos가 깔린 docker image부터 다운받자
+  - sudo docker pull centos:7
+- image 다운 성공
+  - ![image](https://github.com/sonkeehoon/Docker/assets/81700507/ff4b630e-997d-4a9a-aea8-abbc80fc5857)
+- sudo docker run -it --name my-centos7 centos:7 bash
+  - -it : 만들자 마자 컨테이너 내부 터미널로 이동
+  - --name my-centos7 : my-centos라는 이름의 컨테이너
+  - 위에서 다운받은 centos 이미지
+  - bash : bash쉘에서 실행
+- 컨테이너가 잘 생성됐는지 확인하려면 다른 터미널에서 sudo docker ps 
+  - ![image](https://github.com/sonkeehoon/Docker/assets/81700507/50b46c68-7033-401d-bd19-7004e99cea63)
+  - 생성 완료
+- 컨테이너 내부에 업데이트 및 git 설치
+  - yum update
+    - 우분투에서 apt update는 금방 끝나는데 yum update는 좀 시간이 걸린다
+  - yum install git
+- 만들어진(git을 추가로 설치한)컨테이너를 이미지로 만들어보자
+- 
+
+
+
 <hr><br>
 
 ## `2023-07-07` docker commit 마무리
