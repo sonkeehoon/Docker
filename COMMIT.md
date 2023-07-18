@@ -1,7 +1,7 @@
 ![image](https://github.com/sonkeehoon/Docker/assets/81700507/9a971556-226a-46c3-abb1-9dcf65733b26)
 
 
-# Docker Commit (공부중)
+# Docker Commit
 Docker의 기초를 공부한 뒤 추가적인 공부를 하는공간
 - 공부 순서 : Docker 기초 - Docker compose - Docker commit(현재)
 - 강의 자료 : https://www.youtube.com/watch?v=RMNOQXs-f68
@@ -51,13 +51,54 @@ Docker의 기초를 공부한 뒤 추가적인 공부를 하는공간
     - 우분투에서 apt update는 금방 끝나는데 yum update는 좀 시간이 걸린다
   - yum install git
 - 만들어진(git을 추가로 설치한)컨테이너를 이미지로 만들어보자
-- 
+- sudo docker commit my-centos7 keehoon:centos7-git
+  - my-centos7 : commit 당할 컨테이너 이름
+  - keehoon : respository 이름
+  - centos7-git : 이미지 이름
+- 만들어 졌는지 확인
+- sudo docker images
+  - ![image](https://github.com/sonkeehoon/Docker/assets/81700507/1ad29bf0-4bf8-42e3-a009-1f3ca616f46e)
+  - 생성 완료
+- 잘 만들어진 이미지를 써먹어보자
+- 두개의 터미널을 키고 각각의 터미널에서 컨테이너를 만들자
+- 1번 터미널
+  - sudo docker run -it --name nodejs keehoon:centos7-git bash
+  - yum update
+  - yum install epel-release
+  - yum install nodejs
+- 2번 터미널
+  - sudo docker run -it --name python keehoon:centos7-git bash
+  - yum update && yum install python3
+<br>
 
+- 확인 해보자
+- 1번 터미널
+  - node -v
+    - ![image](https://github.com/sonkeehoon/Docker/assets/81700507/fb3becde-0252-4bca-a02d-d696693f2f27)
+- 2번 터미널
+  - python --version
+    - ![image](https://github.com/sonkeehoon/Docker/assets/81700507/5191be35-75c7-4cd8-a710-b89ba2302044)
+  - 2번에서 node -v를 해도 실행되지 않는다
+    - 1번 터미널에서 실행한 컨테이너와 독립적인 환경이기 때문에
+<br>
 
+- (추가)이 모든 과정을 Dockerfile 하나로 만들어 놓을수도 있다
+- Dockerfile을 만든후 다음과 같이 입력하고
+  - FROM centos:7
+  - RUN yum -y update && yum install -y git
+  - ![image](https://github.com/sonkeehoon/Docker/assets/81700507/2c2f5b63-7262-46e8-a865-357e65670c4d)
+- 다음 명령을 실행하면 된다
+- sudo docker build -t keehoon:centos-git-2 .
+  - build : image를 만들어라
+  - -t keehoon:centos-get-2 : 만들 이미지의 (레포지토리:태그명)을 정하는 t옵션
+  - . : 현재 위치(.)의 Dockerfile로
+- 이렇게 하면 위의 commit과정과 같은 결과를 얻는다
 
 <hr><br>
 
-## `2023-07-07` docker commit 마무리
-- docker commit은 image를 만드는 명령어
-- <strong>docker를 더 많이 공부해보고 싶다면</strong> https://seomal.com/map/1/129
+## `2023-07-18` docker commit 마무리
+- docker commit은 컨테이너를 image로 만드는 명령어
+- docker build 또한 image를 만드는 명령어 이지만
+  - commit과 다른점은 Dockerfile을 이용해서 만든다는 점 (컨테이너 없이도 가능)
+- <strong>docker를 더 많이 공부해보고 싶다면</strong> https://seomal.com/map/1/140
 <hr><br>
