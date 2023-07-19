@@ -62,7 +62,6 @@ Docker의 기초를 공부한 뒤 추가적인 공부를 하는공간
     wordpress:latest
   - 성공하면 app_data라는 폴더가 생성된다
   - 잘 작동할까? 한번 접속을 해보자
-    - http://3.39.137.68:8080/
     <br>
     
   ![image](https://github.com/sonkeehoon/Docker/assets/81700507/31ece19b-239e-4ce4-8a28-357050867d06)
@@ -88,7 +87,6 @@ Docker의 기초를 공부한 뒤 추가적인 공부를 하는공간
     - ![image](https://github.com/sonkeehoon/Docker/assets/81700507/4864eecd-d8da-4edc-8bfb-1932b5f92f82)
     - 아까와 동일하게 2개의 폴더가 생성됐다
   - 설치가 잘 됐는지 확인해보자
-    - http://3.39.137.68:8080/
     - ![image](https://github.com/sonkeehoon/Docker/assets/81700507/984a085f-85f6-4203-858f-6be643aac931)
     - 아까와 같은 wordpress 설치안내 화면이 잘 뜬다
   - docker-compose로 실행한 컨테이너들을 끄고싶다면
