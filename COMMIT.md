@@ -96,7 +96,7 @@ Docker의 기초를 공부한 뒤 추가적인 공부를 하는공간
 
 <hr><br>
 
-## `2023-07-18` docker commit 마무리
+## `2023-07-18` Docker Commit 마무리
 - docker commit은 컨테이너를 image로 만드는 명령어
 - docker build 또한 image를 만드는 명령어 이지만
   - commit과 다른점은 Dockerfile을 이용해서 만든다는 점 (컨테이너 없이도 가능)
