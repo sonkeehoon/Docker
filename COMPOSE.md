@@ -100,7 +100,7 @@ Docker의 기초를 공부한 뒤 추가적인 공부를 하는공간
 
 <hr><br>
 
-## `2023-07-07` docker compose 마무리
+## `2023-07-07` Docker Compose 마무리
 - docker compose란 명령어 입력 없이 yml파일에 명세된 대로 컨테이너들을 만들어주는 명령어다
 - <strong>docker를 더 많이 공부해보고 싶다면</strong> https://seomal.com/map/1/129
 <hr><br>
